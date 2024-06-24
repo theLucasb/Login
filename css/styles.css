@@ -1,137 +1,329 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+/* Importa a fonte "Poppins" de Google Fonts com diferentes pesos */
 
 :root {
-    --text-dark: hsl(240, 54%, 15%);
-    --text-light: hsl(242, 18%, 64%);
-    --primary: hsl(222, 98%, 60%);
-    --primary-lighter: hsl(240, 33%, 86%);
-    --primary-gradient: linear-gradient(to right, #3671fd, #6f31ff);
+  --text-dark: hsl(240, 54%, 15%);
+  --text-light: hsl(242, 18%, 64%);
+  --primary: hsl(222, 98%, 60%);
+  --primary-lighter: hsl(240, 33%, 86%);
+  --primary-gradient: linear-gradient(to right, #3671fd, #6f31ff);
 }
+/* Define variáveis CSS (custom properties) para reutilização de cores e gradientes */
 
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-a, button {
-    all: unset;
-    cursor: pointer;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+/* Remove a margem e o preenchimento padrão de todos os elementos e usa box-sizing: border-box para incluir bordas e padding no cálculo da largura e altura */
+
+a,
+button {
+  all: unset;
+  cursor: pointer;
+}
+/* Remove todas as propriedades de estilo padrão de links e botões, exceto o cursor de ponteiro */
 
 img {
-    width: 100%;
-    height: 100%;
-    display: block;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
+/* Define imagens para ocupar 100% da largura e altura do contêiner pai e as exibe como blocos */
 
 body {
-    font-family: Poppins, sans-serif;
-    min-height: 100vh;
-    background-color: #f5f9ff;
-    display: flex;
-    justify-content: center;
+  font-family: Poppins, sans-serif;
+  min-height: 100vh;
+  background-color: #f5f9ff;
+  display: flex;
+  justify-content: center;
 }
+/* Define a fonte do corpo, altura mínima da janela, cor de fundo, usa flexbox para centralizar conteúdo horizontalmente */
 
 .container {
-    max-width: 1070px;
-    width: 100%;
-    display: flex;
-    margin-inline: 16px;
+  max-width: 1070px;
+  width: 100%;
+  display: flex;
+  margin-inline: 16px;
 }
+/* Define um contêiner central com largura máxima de 1070px, largura total de 100%, usa flexbox para layout e margem horizontal */
 
 .image-section {
-    width: 50%;
-    position: relative;
+  width: 50%;
+  position: relative;
 }
+/* Define a seção de imagem com 50% da largura do contêiner pai e posicionamento relativo */
 
 .image-wrapper {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
+/* Define o invólucro da imagem para ocupar 100% da largura e altura do contêiner pai */
 
 .image-wrapper img {
-    object-fit: cover;
+  object-fit: cover;
 }
+/* Faz a imagem preencher o contêiner mantendo a proporção e cobrindo totalmente */
 
 .content-container {
-    background-color: hsla(0, 0%, 100%, 0.3);
-    backdrop-filter: blur(30px);
-    width: 80%;
-    padding: 32px;
-    color: var(--text-dark);
-    border: 1px solid hsl(0, 100%, 100%);
-    border-radius: 4px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  background-color: hsla(0, 0%, 100%, 0.3);
+  backdrop-filter: blur(30px);
+  padding: 32px;
+  width: 80%;
+  color: var(--text-dark);
+  border-radius: 4px;
+  border: 1px solid hsl(0 100% 100% / 0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+/* Define o contêiner de conteúdo com fundo translúcido, desfoque de fundo, padding, largura de 80%, cor do texto, bordas arredondadas e centralização absoluta */
 
 .content-container h1 {
-    font-weight: 600;
-    margin-bottom: 16px;
-    font-size: 35px;
+  font-weight: 600;
+  font-size: 35.2px;
+  margin-bottom: 16px;
 }
+/* Estiliza o título no contêiner de conteúdo com peso de fonte 600, tamanho 35.2px e margem inferior */
+
+.content-container span {
+  background: var(--primary-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* Aplica um gradiente de fundo ao texto dentro de um span, usando background-clip para exibir o gradiente e tornando o texto transparente */
+
+@media screen and (max-width: 960px) {
+  .container {
+    width: 100%;
+    margin: 0;
+  }
+  .content-container {
+    width: 100%;
+  }
+}
+/* Media query para telas menores que 960px. Define largura total e remove margens horizontais do contêiner e contêiner de conteúdo */
 
 .form-section {
-    width: 50%;
-    background-color: white;
-    padding: 40px 16px;
-    display: flex;
-    align-items: center;
+  width: 50%;
+  background-color: white;
+  padding: 40px 16px;
+  display: flex;
+  align-items: center;
 }
+/* Define a seção de formulário com 50% da largura, fundo branco, padding e usa flexbox para centralizar verticalmente */
 
 .form-wrapper {
-    width: 75%;
-    margin: 0 auto;
+  width: 75%;
+  margin: 0 auto;
 }
+/* Define o invólucro do formulário com 75% da largura e centraliza horizontalmente */
 
 .logo-container {
-    width: 148px;
-    height: 50px;
-    margin-bottom: 35px;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 35.2px;
 }
+/* Define o contêiner do logo com largura e altura de 48px e margem inferior */
 
 .logo-container img {
-    border-radius: 15px;
+  border-radius: 50px;
 }
+/* Torna a imagem do logo circular usando bordas arredondadas */
 
-.form-wrapper h2 {
-    margin-bottom: 1.5px;
+.form-wrapper > h2 {
+  margin-bottom: 1.6px;
 }
+/* Define a margem inferior do título h2 dentro do invólucro do formulário */
 
-.form-wrapper p {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text-light);
-    margin-bottom: 30px;
+.form-wrapper > p {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-light);
+  margin-bottom: 32px;
 }
+/* Define o parágrafo dentro do invólucro do formulário com tamanho de fonte 14px, peso 500, cor de texto clara e margem inferior */
 
 .input-container {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-    gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
 }
+/* Define o contêiner de entrada para exibir elementos em coluna com espaçamento de 16px e margem inferior */
 
 .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2px;
 }
+/* Define o grupo de formulário para exibir elementos em coluna com pequeno espaçamento */
 
 .form-group label {
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--text-dark);
+  font-size: 15px;
+  font-weight: 600;
+  color: #16164d;
 }
+/* Estiliza o rótulo dentro do grupo de formulário com tamanho de fonte 15px, peso 600 e cor de texto escura */
 
 .form-group input {
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--text-dark);
-    padding: 8px;
-    border: 2px solid var(--primary-lighter);
-    border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  padding: 8px;
+  border: 2px solid var(--primary-lighter);
+  border-radius: 4.8px;
 }
+/* Estiliza os campos de entrada com tamanho de fonte 14px, peso 500, cor de texto escura, padding, borda de 2px com cor clara e bordas arredondadas */
+
+.form-group input:focus {
+  border: 2px solid #16164d;
+}
+/* Altera a borda do campo de entrada para cor escura quando focado */
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+/* Estiliza a seção de "lembrar e esquecer" com layout flexível, espaçamento entre elementos e margem inferior */
+
+.remember-me {
+  display: grid;
+  grid-template-columns: 16px auto;
+  gap: 9.6px;
+}
+/* Define o layout de "lembrar-me" como grade com duas colunas e espaçamento de 9.6px */
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  display: grid;
+  place-content: center;
+}
+/* Remove a aparência padrão dos checkboxes e centraliza o conteúdo */
+
+.remember-me input {
+  width: 16px;
+  height: 16px;
+  margin-right: 4.8px;
+  border: 1px solid var(--text-light);
+  border-radius: 2px;
+}
+/* Estiliza os checkboxes com tamanho de 16px, margem direita de 4.8px, borda clara e bordas arredondadas */
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 10.4px;
+  height: 10.4px;
+  background-color: white;
+  transform: scale(0);
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 16px 16px var(--form-control-color);
+}
+/* Define um pseudo-elemento antes dos checkboxes para criar uma marca de verificação personalizada com animação */
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+/* Exibe a marca de verificação quando o checkbox está marcado */
+
+.remember-me input:checked {
+  background: var(--primary-gradient);
+}
+/* Define o fundo do checkbox marcado com o gradiente primário */
+
+.remember-me label {
+  color: var(--text-dark);
+  user-select: none;
+}
+/* Estiliza o rótulo "lembrar-me" com cor de texto escura e desativa a seleção de texto pelo usuário */
+
+.remember-forgot a {
+  color: var(--primary);
+}
+/* Define a cor dos links na seção "lembrar e esquecer" */
+
+.remember-forgot a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--primary);
+}
+/* Adiciona sublinhado aos links na seção "lembrar e esquecer" quando em hover */
+
+.login-btn,
+.google-signin {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9.6px;
+  font-weight: 500;
+  padding: 8px 0;
+  border-radius: 8px;
+}
+/* Define o estilo comum para os botões de login e login do Google, incluindo largura, layout flexível, alinhamento central, espaçamento, peso da fonte, padding e bordas arredondadas */
+
+.login-btn {
+  color: white;
+  background: var(--primary-gradient);
+}
+/* Estiliza o botão de login com cor do texto branca e fundo gradiente primário */
+
+.login-btn:hover {
+  opacity: 0.9;
+}
+/* Adiciona opacidade ao botão de login quando em hover */
+
+.or-divider {
+  width: 100%;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-block: 24px;
+  text-align: center;
+  position: relative;
+}
+/* Estiliza o divisor "ou" com largura, peso da fonte, cor, margem, alinhamento de texto e posição relativa */
+
+.or-divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 1px;
+  width: 45%;
+  background-color: var(--text-light);
+}
+/* Define o pseudo-elemento antes do divisor "ou" para criar uma linha à esquerda */
+
+.or-divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 1px;
+  width: 45%;
+  background-color: var(--text-light);
+}
+/* Define o pseudo-elemento depois do divisor "ou" para criar uma linha à direita */
+
+.google-signin {
+  border: 2px solid var(--primary-lighter);
+}
+/* Estiliza o botão de login do Google com borda */
+
+.google-signin object {
+  width: 24px;
+  height: 24px;
+}
+/* Define o tamanho do objeto dentro do botão de login do Google */
+
